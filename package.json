@@ -16,7 +16,7 @@
     "url": "https://github.com/jaktestowac/vscode-playwright-snippets.git"
   },
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.70.0"
   },
   "keywords": [
     "Playwright"
