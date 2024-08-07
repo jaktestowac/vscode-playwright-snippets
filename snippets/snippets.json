@@ -52,7 +52,7 @@
       "\t// Assert:",
       "});"
     ],
-    "description": "Basic describe suite with before/after hooks"
+    "description": "Basic test"
   },
   "basic test describe with before/after hooks": {
     "prefix": "pw-describe",

@@ -28,10 +28,15 @@ Below you can find a list of all supported snippets.
 
 ## Playwright
 
-| Snippet   | Description                          |
-| --------- | ------------------------------------ |
-| `pw-goto` | Navigates the page to a URL          |
-| `pw-test` | A basic test with before/after hooks |
+| Snippet             | Description                                  |
+| ------------------- | -------------------------------------------- |
+| pw-goto             | Navigates the page to a URL                  |
+| pw-page-on-console  | Listen for console events                    |
+| pw-page-on-response | Listen for response events                   |
+| pw-locator-handler  | Add a custom locator handler                 |
+| pw-wait-response    | Wait for a specific response                 |
+| pw-test             | Basic test                                   |
+| pw-describe         | Basic describe suite with before/after hooks |
 
 # Contributing
 
