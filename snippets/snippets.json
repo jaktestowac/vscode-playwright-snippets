@@ -4,6 +4,45 @@
     "body": "await page.goto('$0');",
     "description": "Navigates the page to a URL"
   },
+  "page.on console": {
+    "prefix": "pw-page-on-console",
+    "body": [
+      "page.on('console', async msg => {",
+      "\t${0:console.log(msg);}",
+      "});"
+    ],
+    "description": "Listen for console events"
+  },
+  "page.on response": {
+    "prefix": "pw-page-on-response",
+    "body": [
+      "page.on('response', response => {",
+      "\t${0:console.log(response.status());}",
+      "});"
+    ],
+    "description": "Listen for response events"
+  },
+  "page add Locator Handler": {
+    "prefix": "pw-locator-handler",
+    "body": [
+      "await page.addLocatorHandler(page.getByText('$1'), async () => {",
+      "\tawait page.getByRole('button', { name: '$2' }).click();",
+      "});"
+    ],
+    "description": "Add a custom locator handler"
+  },
+  "wait for response": {
+    "prefix": "pw-wait-response",
+    "body": [
+      "const responsePromise = page.waitForResponse(response =>",
+      "\tresponse.url() === '$1' && response.status() === $2",
+      "\t\t&& response.request().method() === '$3'",
+      ");",
+      "$4",
+      "const response = await responsePromise;"
+    ],
+    "description": "Wait for a specific response"
+  },
   "basic test": {
     "prefix": "pw-test",
     "body": [
