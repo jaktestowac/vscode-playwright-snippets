@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/jaktestowac/vscode-playwright-snippets/blob/main/images/playwright-logo.png?raw=true" width="200px" alt="Playwright Logo">
+  <img src="https://github.com/jaktestowac/vscode-playwright-snippets/blob/main/imgs/playwright-logo.png?raw=true" width="200px" alt="Playwright Logo">
 </p>
 
 <h1 align="center">VS Code - Playwright Snippets</h1>
