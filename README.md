@@ -8,6 +8,10 @@
 
 This Visual Studio Code extension adds predefined useful code snippets for [Playwright](https://playwright.dev/).
 
+<p align="center">
+  <img src="https://github.com/jaktestowac/vscode-playwright-snippets/blob/main/imgs/preview-1.gif?raw=true" alt="Preview">
+</p>
+
 Snippets in Visual Studio Code (VS Code) are customizable templates that can be quickly inserted into your code.
 
 Using snippets speeds up coding by reducing repetitive tasks, allowing for more efficient and error-free code writing.
