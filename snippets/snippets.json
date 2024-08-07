@@ -48,8 +48,11 @@
     "body": [
       "test(\"$1\", async ({ page }) => {",
       "\t// Arrange:",
+      "\t$2",
       "\t// Act:",
+      "\t$3",
       "\t// Assert:",
+      "\t$4",
       "});"
     ],
     "description": "Basic test"
