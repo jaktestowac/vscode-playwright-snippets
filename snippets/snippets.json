@@ -68,7 +68,7 @@
       "\t});",
       "",
       "\ttest.afterEach(async ({ page }) => {",
-      "\t\t// TODO: open the page",
+      "\t\t// TODO: clear the data after the test",
       "\t});",
       "",
       "\ttest(\"$2\", async ({ page }) => {",
@@ -79,5 +79,36 @@
       "});"
     ],
     "description": "Basic describe suite with before/after hooks"
+  },
+  "test describe with all before/after hooks": {
+    "prefix": "pw-describe-full",
+    "body": [
+      "import { test, expect } from \"@playwright/test\";",
+      "",
+      "test.describe(\"$1\", () => {",
+      "\ttest.beforeAll(async () => {",
+      "\t\t// TODO: prepare the data before all test",
+      "\t});",
+      "",
+      "\ttest.beforeEach(async ({ page }) => {",
+      "\t\t// TODO: open the page before each test",
+      "\t});",
+      "",
+      "\ttest.afterEach(async ({ page }) => {",
+      "\t\t// TODO: clear the data after each test",
+      "\t});",
+      "",
+      "\ttest.afterAll(async () => {",
+      "\t\t// TODO: clear the data after all tests",
+      "\t});",
+      "",
+      "\ttest(\"$2\", async ({ page }) => {",
+      "\t\t// Arrange:",
+      "\t\t// Act:",
+      "\t\t// Assert:",
+      "\t});",
+      "});"
+    ],
+    "description": "Describe suite with all before/after hooks"
   }
 }
