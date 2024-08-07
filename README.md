@@ -17,9 +17,11 @@ Using snippets speeds up coding by reducing repetitive tasks, allowing for more 
 Snippets in Visual Studio Code (VS Code) are customizable templates that can be quickly inserted into your code. Here’s how to use them:
 
 1. Insert a Snippet
-   Type a trigger word followed by pressing `Tab` or `Ctrl + Space` to bring up the snippet suggestion. Select the desired snippet from the list.
+
+   Type a trigger word (e.g. `pw-page`) followed by pressing `Tab` or `Ctrl + Space` to bring up the snippet suggestion. Select the desired snippet from the list.
 
 2. Navigate through Fields
+
    After inserting a snippet, use `Tab` to jump between predefined placeholders within the snippet. You can customize or remove these fields as needed.
 
 # Snippets List
