@@ -1,0 +1,42 @@
+{
+  "name": "vsc-playwright-snippets",
+  "displayName": "Playwright Snippets for VS Code",
+  "description": "Playwright Snippets for VS Code",
+  "author": "jaktestowac.pl",
+  "publisher": "jaktestowac-pl",
+  "homepage": "https://github.com/jaktestowac/vscode-playwright-snippets",
+  "version": "0.0.1",
+  "icon": "imgs/playwright-snippets-logo.png",
+  "galleryBanner": {
+    "color": "#2b3137",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaktestowac/vscode-playwright-snippets.git"
+  },
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "keywords": [
+    "Playwright"
+  ],
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "publish": "vsce publish",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "mocha": "^10.7.0"
+  }
+}

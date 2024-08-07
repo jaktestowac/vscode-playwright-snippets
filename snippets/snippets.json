@@ -1,0 +1,41 @@
+{
+  "page.goto": {
+    "prefix": "pw-goto",
+    "body": "await page.goto('$0');",
+    "description": "Navigates the page to a URL"
+  },
+  "basic test": {
+    "prefix": "pw-test",
+    "body": [
+      "test(\"$1\", async ({ page }) => {",
+      "\t// Arrange:",
+      "\t// Act:",
+      "\t// Assert:",
+      "});"
+    ],
+    "description": "Basic describe suite with before/after hooks"
+  },
+  "basic test describe with before/after hooks": {
+    "prefix": "pw-describe",
+    "body": [
+      "import { test, expect } from \"@playwright/test\";",
+      "",
+      "test.describe(\"$1\", () => {",
+      "\ttest.beforeEach(async ({ page }) => {",
+      "\t\t// TODO: open the page",
+      "\t});",
+      "",
+      "\ttest.afterEach(async ({ page }) => {",
+      "\t\t// TODO: open the page",
+      "\t});",
+      "",
+      "\ttest(\"$2\", async ({ page }) => {",
+      "\t\t// Arrange:",
+      "\t\t// Act:",
+      "\t\t// Assert:",
+      "\t});",
+      "});"
+    ],
+    "description": "Basic describe suite with before/after hooks"
+  }
+}
