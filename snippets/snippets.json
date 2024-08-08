@@ -1,10 +1,10 @@
 {
-  "page.goto": {
+  "Playwright page.goto": {
     "prefix": "pw-goto",
     "body": "await page.goto('$0');",
-    "description": "Navigates the page to a URL"
+    "description": "Navigate to a URL"
   },
-  "page.on console": {
+  "Playwright page.on console": {
     "prefix": "pw-page-on-console",
     "body": [
       "page.on('console', async msg => {",
@@ -13,7 +13,7 @@
     ],
     "description": "Listen for console events"
   },
-  "page.on response": {
+  "Playwright page.on response": {
     "prefix": "pw-page-on-response",
     "body": [
       "page.on('response', response => {",
@@ -22,7 +22,7 @@
     ],
     "description": "Listen for response events"
   },
-  "page add Locator Handler": {
+  "Playwright page add Locator Handler": {
     "prefix": "pw-locator-handler",
     "body": [
       "await page.addLocatorHandler(page.getByText('$1'), async () => {",
@@ -31,11 +31,12 @@
     ],
     "description": "Add a custom locator handler"
   },
-  "wait for response": {
+  "Playwright wait for response": {
     "prefix": "pw-wait-response",
     "body": [
       "const responsePromise = page.waitForResponse(response =>",
-      "\tresponse.url() === '$1' && response.status() === $2",
+      "\tresponse.url() === '${1:http://localhost:3000/}'",
+      "\t\t&& response.status() === $2",
       "\t\t&& response.request().method() === '$3'",
       ");",
       "$4",
@@ -43,7 +44,72 @@
     ],
     "description": "Wait for a specific response"
   },
-  "basic test": {
+  "Playwright beforeEach block": {
+    "prefix": "pw-beforeEach",
+    "body": [
+      "test.beforeEach(async ({ ${1:page} }) => {",
+      "\t${0:console.log('beforeEach');}",
+      "});",
+      ""
+    ],
+    "description": "Playwright beforeEach block"
+  },
+  "Playwright afterEach block": {
+    "prefix": "pw-afterEach",
+    "body": [
+      "test.afterEach(async ({ ${1:page} }) => {",
+      "\t${0:console.log('afterEach');}",
+      "});",
+      ""
+    ],
+    "description": "Playwright afterEach block"
+  },
+  "Playwright beforeAll block": {
+    "prefix": "pw-beforeAll",
+    "body": [
+      "test.beforeAll(async ({ ${1:page} }) => {",
+      "\t${0:console.log('beforeAll');}",
+      "});",
+      ""
+    ],
+    "description": "Playwright beforeAll block"
+  },
+  "Playwright afterAll block": {
+    "prefix": "pw-afterAll",
+    "body": [
+      "test.afterAll(async ({ ${1:page} }) => {",
+      "\t${0:console.log('afterAll');}",
+      "});",
+      ""
+    ],
+    "description": "Playwright afterAll block"
+  },
+  "Playwright Page Object": {
+    "prefix": "pw-pom",
+    "body": [
+      "import { Page } from '@playwright/test';",
+      "",
+      "export class ${1:ExamplePage} {",
+      "\turl = '';",
+      "\tconstructor(protected page: Page) {}",
+      "",
+      "\tasync goto(parameters = ''): Promise<void> {",
+      "\t\tawait this.page.goto(`\\${this.url}\\${parameters}`);",
+      "\t}",
+      "",
+      "\tasync getTitle(): Promise<string> {",
+      "\t\tawait this.page.waitForLoadState();",
+      "\t\treturn await this.page.title();",
+      "\t}",
+      "",
+      "\tasync waitForPageToLoadUrl(): Promise<void> {",
+      "\t\tawait this.page.waitForURL(this.url);",
+      "\t}",
+      "}"
+    ],
+    "description": "Playwright Page Object Model (POM) class template"
+  },
+  "Playwright basic test": {
     "prefix": "pw-test",
     "body": [
       "test(\"$1\", async ({ page }) => {",
@@ -57,7 +123,21 @@
     ],
     "description": "Basic test"
   },
-  "basic test describe with before/after hooks": {
+  "Playwright basic test step": {
+    "prefix": "pw-step",
+    "body": [
+      "const stepResult = await test.step(\"$1\", async () => {",
+      "\t// Arrange:",
+      "\t$2",
+      "\t// Act:",
+      "\t$3",
+      "\t// Assert:",
+      "\t$4",
+      "});"
+    ],
+    "description": "Basic test step"
+  },
+  "Playwright basic test describe with before/after hooks": {
     "prefix": "pw-describe",
     "body": [
       "import { test, expect } from \"@playwright/test\";",
@@ -80,7 +160,7 @@
     ],
     "description": "Basic describe suite with before/after hooks"
   },
-  "test describe with all before/after hooks": {
+  "Playwright test describe with all before/after hooks": {
     "prefix": "pw-describe-full",
     "body": [
       "import { test, expect } from \"@playwright/test\";",
