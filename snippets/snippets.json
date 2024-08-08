@@ -22,6 +22,141 @@
     ],
     "description": "Listen for response events"
   },
+  "Playwright page.route": {
+    "prefix": "pw-page-on-request",
+    "body": [
+      "await page.route('**/$1', async (route) => {",
+      "\tif (route.request()) {",
+      "\t\tawait route.fulfill({ body: JSON.stringify(mockedBody) })",
+      "\t} else {",
+      "\t\tawait route.continue()",
+      "\t}",
+      "})"
+    ],
+    "description": "Intercept network requests"
+  },
+  "Playwright expect().toHaveText": {
+    "prefix": "pw-expect-toHaveText",
+    "body": ["await expect(${1:elementLocator}).toHaveText($2);"],
+    "description": "Expect an element to have text"
+  },
+  "Playwright expect().toBeVisible": {
+    "prefix": "pw-expect-toBeVisible",
+    "body": ["await expect(${1:elementLocator}).toBeVisible();"],
+    "description": "Expect an element to be visible"
+  },
+  "Playwright expect().toBeEmpty": {
+    "prefix": "pw-expect-toBeEmpty",
+    "body": ["await expect(${1:elementLocator}).toBeEmpty();"],
+    "description": "Expect an element to be empty"
+  },
+  "Playwright expect().toBeHidden": {
+    "prefix": "pw-expect-toBeHidden",
+    "body": ["await expect(${1:elementLocator}).toBeHidden();"],
+    "description": "Expect an element to be hidden"
+  },
+  "Playwright expect().toBeEditable": {
+    "prefix": "pw-expect-toBeEditable",
+    "body": ["await expect(${1:elementLocator}).toBeEditable();"],
+    "description": "Expect an element to be editable"
+  },
+  "Playwright expect().toBeEnabled": {
+    "prefix": "pw-expect-toBeEnabled",
+    "body": ["await expect(${1:elementLocator}).toBeEnabled();"],
+    "description": "Expect an element to be enabled"
+  },
+  "Playwright expect().toBeDisabled": {
+    "prefix": "pw-expect-toBeDisabled",
+    "body": ["await expect(${1:elementLocator}).toBeDisabled();"],
+    "description": "Expect an element to be disabled"
+  },
+  "Playwright expect().toBeFocused": {
+    "prefix": "pw-expect-toBeFocused",
+    "body": ["await expect(${1:elementLocator}).toBeFocused();"],
+    "description": "Expect an element to be focused"
+  },
+  "Playwright expect().toBeInViewport": {
+    "prefix": "pw-expect-toBeInViewport",
+    "body": ["await expect(${1:elementLocator}).toBeInViewport();"],
+    "description": "Expect an element to be in the viewport"
+  },
+  "Playwright expect().toHaveAccessibleDescription": {
+    "prefix": "pw-expect-toHaveAccessibleDescription",
+    "body": [
+      "await expect(${1:elementLocator}).toHaveAccessibleDescription($2);"
+    ],
+    "description": "Expect an element to have an accessible description"
+  },
+  "Playwright expect().toHaveAccessibleName": {
+    "prefix": "pw-expect-toHaveAccessibleName",
+    "body": ["await expect(${1:elementLocator}).toHaveAccessibleName($2);"],
+    "description": "Expect an element to have an accessible name"
+  },
+  "Playwright expect().toContainText": {
+    "prefix": "pw-expect-toContainText",
+    "body": ["await expect(${1:elementLocator}).toContainText($2);"],
+    "description": "Expect an element to contain specific text"
+  },
+  "Playwright expect().toHaveValue": {
+    "prefix": "pw-expect-toHaveValue",
+    "body": ["await expect(${1:elementLocator}).toHaveValue($2);"],
+    "description": "Expect an element to have a specific value"
+  },
+  "Playwright expect().toHaveValues": {
+    "prefix": "pw-expect-toHaveValues",
+    "body": ["await expect(${1:elementLocator}).toHaveValues([$2]);"],
+    "description": "Expect an element to have specific values"
+  },
+  "Playwright expect().toHaveAttribute": {
+    "prefix": "pw-expect-toHaveAttribute",
+    "body": ["await expect(${1:elementLocator}).toHaveAttribute($2, $3);"],
+    "description": "Expect an element to have a specific attribute"
+  },
+  "Playwright expect().toHaveClass": {
+    "prefix": "pw-expect-toHaveClass",
+    "body": ["await expect(${1:elementLocator}).toHaveClass($2);"],
+    "description": "Expect an element to have a specific class"
+  },
+  "Playwright expect().toHaveCount": {
+    "prefix": "pw-expect-toHaveCount",
+    "body": ["await expect(${1:elementLocator}).toHaveCount($2);"],
+    "description": "Expect an element to have a specific count"
+  },
+  "Playwright expect().toHaveCSS": {
+    "prefix": "pw-expect-toHaveCSS",
+    "body": ["await expect(${1:elementLocator}).toHaveCSS($2, $3);"],
+    "description": "Expect an element to have specific CSS property"
+  },
+  "Playwright expect().toHaveId": {
+    "prefix": "pw-expect-toHaveId",
+    "body": ["await expect(${1:elementLocator}).toHaveId($2);"],
+    "description": "Expect an element to have a specific ID"
+  },
+  "Playwright expect().toHaveTitle": {
+    "prefix": "pw-expect-toHaveTitle",
+    "body": ["await expect(page).toHaveTitle($1);"],
+    "description": "Expect the page to have a specific title"
+  },
+  "Playwright expect().toHaveJSProperty": {
+    "prefix": "pw-expect-toHaveJSProperty",
+    "body": ["await expect(${1:elementLocator}).toHaveJSProperty($2, $3);"],
+    "description": "Expect an element to have a specific JavaScript property"
+  },
+  "Playwright expect().toHaveRole": {
+    "prefix": "pw-expect-toHaveRole",
+    "body": ["await expect(${1:elementLocator}).toHaveRole($2);"],
+    "description": "Expect an element to have a specific role"
+  },
+  "Playwright expect().toHaveURL": {
+    "prefix": "pw-expect-toHaveURL",
+    "body": ["await expect(page).toHaveURL($1);"],
+    "description": "Expect the page to have a specific URL"
+  },
+  "Playwright expect().toHaveScreenshot": {
+    "prefix": "pw-expect-toHaveScreenshot",
+    "body": ["await expect(page).toHaveScreenshot();"],
+    "description": "Expect the page to have a screenshot"
+  },
   "Playwright page add Locator Handler": {
     "prefix": "pw-locator-handler",
     "body": [

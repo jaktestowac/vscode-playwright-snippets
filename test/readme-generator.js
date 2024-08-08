@@ -5,7 +5,7 @@ let table = "| Snippet   | Description                          |\n";
 table += "| --------- | ------------------------------------ |\n";
 
 for (const snippetKey in snippets) {
-  table += `| ${snippets[snippetKey].prefix} | ${snippets[snippetKey].description} |\n`;
+  table += `| \`${snippets[snippetKey].prefix}\` | ${snippets[snippetKey].description} |\n`;
 }
 
 console.log(table);

@@ -36,7 +36,7 @@
     "publish:patch": "vsce publish patch",
     "publish:minor": "vsce publish minor",
     "publish:major": "vsce publish major",
-    "test": "mocha"
+    "test": "mocha './test/**/*.spec.js'"
   },
   "dependencies": {
     "mocha": "^10.7.0"
