@@ -171,10 +171,10 @@
     "body": [
       "const responsePromise = page.waitForResponse(response =>",
       "\tresponse.url() === '${1:http://localhost:3000/}'",
-      "\t\t&& response.status() === $2",
-      "\t\t&& response.request().method() === '$3'",
+      "\t\t&& response.status() === ${1:200}",
+      "\t\t&& response.request().method() === '${1:GET}'",
       ");",
-      "$4",
+      "",
       "const response = await responsePromise;"
     ],
     "description": "Wait for a specific response"
@@ -243,6 +243,21 @@
       "}"
     ],
     "description": "Playwright Page Object Model (POM) class template"
+  },
+  "Playwright Fixture for Page Object": {
+    "prefix": "pw-fixture-pom",
+    "body": [
+      "import { test as base } from '@playwright/test';",
+      "",
+      "export const test = base.extend<{ ${1:examplePage}: ${2:ExamplePage} }>({",
+      "\t${1:examplePage}: async ({ page }, use) => {",
+      "\t\tconst pageObject = new ${2:ExamplePage}(page);",
+      "\t\t// pageObject.goto();",
+      "\t\tawait use(pageObject);",
+      "\t}",
+      "});"
+    ],
+    "description": "Playwright Fixture for Page Object Model (POM) class template"
   },
   "Playwright basic test": {
     "prefix": "pw-test",
