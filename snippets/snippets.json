@@ -13,6 +13,30 @@
     ],
     "description": "Listen for console events"
   },
+  "Playwright page.screenshot": {
+    "prefix": "pw-page-screenshot",
+    "body": [
+      "await page.screenshot({ path: '${0:screenshot.png}', fullPage: true });"
+    ],
+    "description": "Take a screenshot of the page"
+  },
+  "Playwright locator.screenshot": {
+    "prefix": "pw-locator-screenshot",
+    "body": [
+      "await ${0:elementLocator}.screenshot({ path: '${1:screenshot.png}' });"
+    ],
+    "description": "Take a screenshot of the page"
+  },
+  "Playwright runtime annotations": {
+    "prefix": "pw-runtime-annotations",
+    "body": [
+      "test.info().annotations.push({",
+      "\ttype: 'browser version',",
+      "\tdescription: browser.version(),",
+      "});"
+    ],
+    "description": "Add runtime annotations"
+  },
   "Playwright page.on response": {
     "prefix": "pw-page-on-response",
     "body": [
@@ -244,7 +268,7 @@
     ],
     "description": "Playwright Page Object Model (POM) class template"
   },
-  "Playwright Fixture for Page Object": {
+  "Playwright fixture for Page Object": {
     "prefix": "pw-fixture-pom",
     "body": [
       "import { test as base } from '@playwright/test';",
@@ -272,6 +296,24 @@
       "});"
     ],
     "description": "Basic test"
+  },
+  "Playwright basic test with annotations": {
+    "prefix": "pw-test-annotations",
+    "body": [
+      "test(\"$1\", {",
+      "\tannotation: [",
+      "\t\t{ type: 'category', description: 'test description' },",
+      "\t],",
+      "}, async ({ page }) => {",
+      "\t// Arrange:",
+      "\t$2",
+      "\t// Act:",
+      "\t$3",
+      "\t// Assert:",
+      "\t$4",
+      "});"
+    ],
+    "description": "Basic test with annotations"
   },
   "Playwright basic test step": {
     "prefix": "pw-step",

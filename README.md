@@ -34,47 +34,52 @@ Below you can find a list of all supported snippets.
 
 ## Playwright
 
-| Snippet                                 | Description                                              |
-| --------------------------------------- | -------------------------------------------------------- |
-| `pw-goto`                               | Navigate to a URL                                        |
-| `pw-page-on-console`                    | Listen for console events                                |
-| `pw-page-on-response`                   | Listen for response events                               |
-| `pw-page-on-request`                    | Intercept network requests                               |
-| `pw-expect-toHaveText`                  | Expect an element to have text                           |
-| `pw-expect-toBeVisible`                 | Expect an element to be visible                          |
-| `pw-expect-toBeEmpty`                   | Expect an element to be empty                            |
-| `pw-expect-toBeHidden`                  | Expect an element to be hidden                           |
-| `pw-expect-toBeEditable`                | Expect an element to be editable                         |
-| `pw-expect-toBeEnabled`                 | Expect an element to be enabled                          |
-| `pw-expect-toBeDisabled`                | Expect an element to be disabled                         |
-| `pw-expect-toBeFocused`                 | Expect an element to be focused                          |
-| `pw-expect-toBeInViewport`              | Expect an element to be in the viewport                  |
-| `pw-expect-toHaveAccessibleDescription` | Expect an element to have an accessible description      |
-| `pw-expect-toHaveAccessibleName`        | Expect an element to have an accessible name             |
-| `pw-expect-toContainText`               | Expect an element to contain specific text               |
-| `pw-expect-toHaveValue`                 | Expect an element to have a specific value               |
-| `pw-expect-toHaveValues`                | Expect an element to have specific values                |
-| `pw-expect-toHaveAttribute`             | Expect an element to have a specific attribute           |
-| `pw-expect-toHaveClass`                 | Expect an element to have a specific class               |
-| `pw-expect-toHaveCount`                 | Expect an element to have a specific count               |
-| `pw-expect-toHaveCSS`                   | Expect an element to have specific CSS property          |
-| `pw-expect-toHaveId`                    | Expect an element to have a specific ID                  |
-| `pw-expect-toHaveTitle`                 | Expect the page to have a specific title                 |
-| `pw-expect-toHaveJSProperty`            | Expect an element to have a specific JavaScript property |
-| `pw-expect-toHaveRole`                  | Expect an element to have a specific role                |
-| `pw-expect-toHaveURL`                   | Expect the page to have a specific URL                   |
-| `pw-expect-toHaveScreenshot`            | Expect the page to have a screenshot                     |
-| `pw-locator-handler`                    | Add a custom locator handler                             |
-| `pw-wait-response`                      | Wait for a specific response                             |
-| `pw-beforeEach`                         | Playwright beforeEach block                              |
-| `pw-afterEach`                          | Playwright afterEach block                               |
-| `pw-beforeAll`                          | Playwright beforeAll block                               |
-| `pw-afterAll`                           | Playwright afterAll block                                |
-| `pw-pom`                                | Playwright Page Object Model (POM) class template        |
-| `pw-test`                               | Basic test                                               |
-| `pw-step`                               | Basic test step                                          |
-| `pw-describe`                           | Basic describe suite with before/after hooks             |
-| `pw-describe-full`                      | Describe suite with all before/after hooks               |
+| Snippet                                 | Description                                                   |
+| --------------------------------------- | ------------------------------------------------------------- |
+| `pw-goto`                               | Navigate to a URL                                             |
+| `pw-page-on-console`                    | Listen for console events                                     |
+| `pw-page-screenshot`                    | Take a screenshot of the page                                 |
+| `pw-locator-screenshot`                 | Take a screenshot of the page                                 |
+| `pw-runtime-annotations`                | Add runtime annotations                                       |
+| `pw-page-on-response`                   | Listen for response events                                    |
+| `pw-page-on-request`                    | Intercept network requests                                    |
+| `pw-expect-toHaveText`                  | Expect an element to have text                                |
+| `pw-expect-toBeVisible`                 | Expect an element to be visible                               |
+| `pw-expect-toBeEmpty`                   | Expect an element to be empty                                 |
+| `pw-expect-toBeHidden`                  | Expect an element to be hidden                                |
+| `pw-expect-toBeEditable`                | Expect an element to be editable                              |
+| `pw-expect-toBeEnabled`                 | Expect an element to be enabled                               |
+| `pw-expect-toBeDisabled`                | Expect an element to be disabled                              |
+| `pw-expect-toBeFocused`                 | Expect an element to be focused                               |
+| `pw-expect-toBeInViewport`              | Expect an element to be in the viewport                       |
+| `pw-expect-toHaveAccessibleDescription` | Expect an element to have an accessible description           |
+| `pw-expect-toHaveAccessibleName`        | Expect an element to have an accessible name                  |
+| `pw-expect-toContainText`               | Expect an element to contain specific text                    |
+| `pw-expect-toHaveValue`                 | Expect an element to have a specific value                    |
+| `pw-expect-toHaveValues`                | Expect an element to have specific values                     |
+| `pw-expect-toHaveAttribute`             | Expect an element to have a specific attribute                |
+| `pw-expect-toHaveClass`                 | Expect an element to have a specific class                    |
+| `pw-expect-toHaveCount`                 | Expect an element to have a specific count                    |
+| `pw-expect-toHaveCSS`                   | Expect an element to have specific CSS property               |
+| `pw-expect-toHaveId`                    | Expect an element to have a specific ID                       |
+| `pw-expect-toHaveTitle`                 | Expect the page to have a specific title                      |
+| `pw-expect-toHaveJSProperty`            | Expect an element to have a specific JavaScript property      |
+| `pw-expect-toHaveRole`                  | Expect an element to have a specific role                     |
+| `pw-expect-toHaveURL`                   | Expect the page to have a specific URL                        |
+| `pw-expect-toHaveScreenshot`            | Expect the page to have a screenshot                          |
+| `pw-locator-handler`                    | Add a custom locator handler                                  |
+| `pw-wait-response`                      | Wait for a specific response                                  |
+| `pw-beforeEach`                         | Playwright beforeEach block                                   |
+| `pw-afterEach`                          | Playwright afterEach block                                    |
+| `pw-beforeAll`                          | Playwright beforeAll block                                    |
+| `pw-afterAll`                           | Playwright afterAll block                                     |
+| `pw-pom`                                | Playwright Page Object Model (POM) class template             |
+| `pw-fixture-pom`                        | Playwright Fixture for Page Object Model (POM) class template |
+| `pw-test`                               | Basic test                                                    |
+| `pw-test-annotations`                   | Basic test with annotations                                   |
+| `pw-step`                               | Basic test step                                               |
+| `pw-describe`                           | Basic describe suite with before/after hooks                  |
+| `pw-describe-full`                      | Describe suite with all before/after hooks                    |
 
 # Contributing
 
