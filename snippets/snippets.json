@@ -181,6 +181,162 @@
     "body": ["await expect(page).toHaveScreenshot();"],
     "description": "Expect the page to have a screenshot"
   },
+  "Playwright network slomo option for a test": {
+    "prefix": "pw-test-use-network-slomo",
+    "body": ["test.use({ launchOptions: { slowMo: ${1:1_000} } });"],
+    "description": "Slow down Playwright operations"
+  },
+  "Playwright testIdAttribute for a test": {
+    "prefix": "pw-test-use-testIdAttribute",
+    "body": ["test.use({ testIdAttribute : '${1:1_000}'});"],
+    "description": "Set the testIdAttribute for test"
+  },
+  "Playwright basic network throttling": {
+    "prefix": "pw-network-throttle-basic",
+    "body": [
+      "await page.route('**/*', async route => {",
+      "\tawait new Promise(f => setTimeout(f, 100));",
+      "\tawait route.continue();",
+      "});"
+    ],
+    "description": "Throttle network requests globally with a 100ms delay"
+  },
+  "Playwright throttle with random delay": {
+    "prefix": "pw-network-throttle-random",
+    "body": [
+      "await page.route('**/*', async route => {",
+      "\tconst delay = Math.floor(Math.random() * ${1:500});",
+      "\tawait new Promise(f => setTimeout(f, delay));",
+      "\tawait route.continue();",
+      "});"
+    ],
+    "description": "Throttle network requests with a random delay"
+  },
+  "Playwright throttle by request type": {
+    "prefix": "pw-network-throttle-request-type",
+    "body": [
+      "await page.route('**/*', async route => {",
+      "\tif (route.request().method() === '${1:POST}') {",
+      "\t\tawait new Promise(f => setTimeout(f, ${2:300}));",
+      "\t}",
+      "\tawait route.continue();",
+      "});"
+    ],
+    "description": "Throttle requests based on HTTP method (GET, POST, etc.)"
+  },
+  "Playwright throttle CSS and JS": {
+    "prefix": "pw-network-throttle-css-js",
+    "body": [
+      "await page.route('**/*.{css,js}', async route => {",
+      "\tawait new Promise(f => setTimeout(f, ${1:300}));",
+      "\tawait route.continue();",
+      "});"
+    ],
+    "description": "Throttle loading of CSS and JavaScript resources"
+  },
+  "Playwright throttle images": {
+    "prefix": "pw-network-throttle-images",
+    "body": [
+      "await page.route('**/*.{png,jpg,jpeg,gif}', async route => {",
+      "\tawait new Promise(f => setTimeout(f, ${1:500}));",
+      "\tawait route.continue();",
+      "});"
+    ],
+    "description": "Throttle loading of image resources"
+  },
+  "Playwright set viewport size for a test": {
+    "prefix": "pw-test-use-viewport-hd-size",
+    "body": [
+      "test.use({ viewport: { width: ${1:1920}, height: ${2:1080 } } });"
+    ],
+    "description": "Set the viewport size for test"
+  },
+  "Playwright set locale and timezone for a test": {
+    "prefix": "pw-test-use-locale-timezone",
+    "body": [
+      "test.use({",
+      "\tlocale: '${1:de-DE}',",
+      "\ttimezoneId: '${2:Europe/Berlin}'",
+      "});"
+    ],
+    "description": "Set locale and timezone for a specific test"
+  },
+  "Playwright set cookie": {
+    "prefix": "pw-set-cookie",
+    "body": [
+      "await context.addCookies([{",
+      "\tname: '${1:cookieName}',",
+      "\tvalue: '${2:cookieValue}',",
+      "\tdomain: '${3:domain}',",
+      "\tpath: '${4:/}'",
+      "}]);",
+      "await page.reload();"
+    ],
+    "description": "Set a cookie in the browser context"
+  },
+  "Playwright clear cookies": {
+    "prefix": "pw-clear-cookies",
+    "body": ["await context.clearCookies();"],
+    "description": "Clear all cookies in the browser context"
+  },
+  "Playwright handle file download": {
+    "prefix": "pw-download",
+    "body": [
+      "const [download] = await Promise.all([",
+      "\tpage.waitForEvent('download'),",
+      "\t${1:elementLocator}.click()",
+      "]);",
+      "await download.saveAs('${2:path/to/file}');"
+    ],
+    "description": "Handle file downloads"
+  },
+  "Playwright emulate geolocation": {
+    "prefix": "pw-emulate-geolocation",
+    "body": [
+      "await context.setGeolocation({",
+      "\tlatitude: ${1:37.7749},",
+      "\tlongitude: ${2:-122.4194}",
+      "\tpermissions: ['geolocation'],",
+      "});"
+    ],
+    "description": "Emulate a specific geolocation"
+  },
+  "Playwright evaluate expression": {
+    "prefix": "pw-eval",
+    "body": [
+      "const result = await page.evaluate(() => {",
+      "\treturn ${1:document.title};",
+      "});",
+      "console.log(result);"
+    ],
+    "description": "Evaluate a JavaScript expression in the page context"
+  },
+  "Playwright frame locator with element fill": {
+    "prefix": "pw-iframe-fill",
+    "body": [
+      "const element = await page.frameLocator('${1:iframeSelector}').getByLabel('${2:labelText}');",
+      "await element.fill('${3:inputValue}');"
+    ],
+    "description": "Locate and fill an element inside a frame"
+  },
+  "Playwright frame locator with element click": {
+    "prefix": "pw-iframe-click",
+    "body": [
+      "const element = await page.frameLocator('${1:iframeSelector}').locator('${2:cssSelector}');",
+      "await element.click();"
+    ],
+    "description": "Locate and click an element inside a frame"
+  },
+  "Playwright frame locator with multiple elements": {
+    "prefix": "pw-iframe-multiple-elements",
+    "body": [
+      "const frame = page.frameLocator('${1:iframeSelector}');",
+      "await frame.fill('${2:inputSelector}', '${3:inputValue}');",
+      "await frame.click('${4:buttonSelector}');",
+      "await frame.waitForSelector('${5:nextElementSelector}');"
+    ],
+    "description": "Perform multiple interactions inside a frame, including waiting for an element"
+  },
   "Playwright page add Locator Handler": {
     "prefix": "pw-locator-handler",
     "body": [
