@@ -2,7 +2,8 @@
   "Playwright page.goto": {
     "prefix": "pw-goto",
     "body": "await page.goto('$1');",
-    "description": "Navigate to a URL"
+    "description": "Navigate to a URL",
+    "category": "Navigation"
   },
   "Playwright page.on console": {
     "prefix": "pw-page-on-console",
@@ -11,21 +12,24 @@
       "\t${0:console.log(msg);}",
       "});"
     ],
-    "description": "Listen for console events"
+    "description": "Listen for console events",
+    "category": "Events"
   },
   "Playwright page.screenshot": {
     "prefix": "pw-page-screenshot",
     "body": [
       "await page.screenshot({ path: '${0:screenshot.png}', fullPage: true });"
     ],
-    "description": "Take a screenshot of the page"
+    "description": "Take a screenshot of the page",
+    "category": "Screenshots"
   },
   "Playwright locator.screenshot": {
     "prefix": "pw-locator-screenshot",
     "body": [
       "await ${0:elementLocator}.screenshot({ path: '${1:screenshot.png}' });"
     ],
-    "description": "Take a screenshot of the page"
+    "description": "Take a screenshot of the element",
+    "category": "Screenshots"
   },
   "Playwright runtime annotations": {
     "prefix": "pw-runtime-annotations",
@@ -35,7 +39,8 @@
       "\tdescription: browser.version(),",
       "});"
     ],
-    "description": "Add runtime annotations"
+    "description": "Add runtime annotations",
+    "category": "Annotations"
   },
   "Playwright page.on response": {
     "prefix": "pw-page-on-response",
@@ -44,7 +49,8 @@
       "\t${0:console.log(response.status());}",
       "});"
     ],
-    "description": "Listen for response events"
+    "description": "Listen for response events",
+    "category": "Events"
   },
   "Playwright page.route": {
     "prefix": "pw-page-on-request",
@@ -57,139 +63,166 @@
       "\t}",
       "})"
     ],
-    "description": "Intercept network requests"
+    "description": "Intercept network requests",
+    "category": "Network"
   },
   "Playwright expect().toHaveText": {
     "prefix": "pw-expect-toHaveText",
     "body": ["await expect(${1:elementLocator}).toHaveText($2);"],
-    "description": "Expect an element to have text"
+    "description": "Expect an element to have text",
+    "category": "Assertions"
   },
   "Playwright expect().toBeVisible": {
     "prefix": "pw-expect-toBeVisible",
     "body": ["await expect(${1:elementLocator}).toBeVisible();"],
-    "description": "Expect an element to be visible"
+    "description": "Expect an element to be visible",
+    "category": "Assertions"
   },
   "Playwright expect().toBeEmpty": {
     "prefix": "pw-expect-toBeEmpty",
     "body": ["await expect(${1:elementLocator}).toBeEmpty();"],
-    "description": "Expect an element to be empty"
+    "description": "Expect an element to be empty",
+    "category": "Assertions"
   },
   "Playwright expect().toBeHidden": {
     "prefix": "pw-expect-toBeHidden",
     "body": ["await expect(${1:elementLocator}).toBeHidden();"],
-    "description": "Expect an element to be hidden"
+    "description": "Expect an element to be hidden",
+    "category": "Assertions"
   },
   "Playwright expect().toBeEditable": {
     "prefix": "pw-expect-toBeEditable",
     "body": ["await expect(${1:elementLocator}).toBeEditable();"],
-    "description": "Expect an element to be editable"
+    "description": "Expect an element to be editable",
+    "category": "Assertions"
   },
   "Playwright expect().toBeEnabled": {
     "prefix": "pw-expect-toBeEnabled",
     "body": ["await expect(${1:elementLocator}).toBeEnabled();"],
-    "description": "Expect an element to be enabled"
+    "description": "Expect an element to be enabled",
+    "category": "Assertions"
   },
   "Playwright expect().toBeDisabled": {
     "prefix": "pw-expect-toBeDisabled",
     "body": ["await expect(${1:elementLocator}).toBeDisabled();"],
-    "description": "Expect an element to be disabled"
+    "description": "Expect an element to be disabled",
+    "category": "Assertions"
   },
   "Playwright expect().toBeFocused": {
     "prefix": "pw-expect-toBeFocused",
     "body": ["await expect(${1:elementLocator}).toBeFocused();"],
-    "description": "Expect an element to be focused"
+    "description": "Expect an element to be focused",
+    "category": "Assertions"
   },
   "Playwright expect().toBeInViewport": {
     "prefix": "pw-expect-toBeInViewport",
     "body": ["await expect(${1:elementLocator}).toBeInViewport();"],
-    "description": "Expect an element to be in the viewport"
+    "description": "Expect an element to be in the viewport",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveAccessibleDescription": {
     "prefix": "pw-expect-toHaveAccessibleDescription",
     "body": [
       "await expect(${1:elementLocator}).toHaveAccessibleDescription($2);"
     ],
-    "description": "Expect an element to have an accessible description"
+    "description": "Expect an element to have an accessible description",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveAccessibleName": {
     "prefix": "pw-expect-toHaveAccessibleName",
     "body": ["await expect(${1:elementLocator}).toHaveAccessibleName($2);"],
-    "description": "Expect an element to have an accessible name"
+    "description": "Expect an element to have an accessible name",
+    "category": "Assertions"
   },
   "Playwright expect().toContainText": {
     "prefix": "pw-expect-toContainText",
     "body": ["await expect(${1:elementLocator}).toContainText($2);"],
-    "description": "Expect an element to contain specific text"
+    "description": "Expect an element to contain specific text",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveValue": {
     "prefix": "pw-expect-toHaveValue",
     "body": ["await expect(${1:elementLocator}).toHaveValue($2);"],
-    "description": "Expect an element to have a specific value"
+    "description": "Expect an element to have a specific value",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveValues": {
     "prefix": "pw-expect-toHaveValues",
     "body": ["await expect(${1:elementLocator}).toHaveValues([$2]);"],
-    "description": "Expect an element to have specific values"
+    "description": "Expect an element to have specific values",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveAttribute": {
     "prefix": "pw-expect-toHaveAttribute",
     "body": ["await expect(${1:elementLocator}).toHaveAttribute($2, $3);"],
-    "description": "Expect an element to have a specific attribute"
+    "description": "Expect an element to have a specific attribute",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveClass": {
     "prefix": "pw-expect-toHaveClass",
     "body": ["await expect(${1:elementLocator}).toHaveClass($2);"],
-    "description": "Expect an element to have a specific class"
+    "description": "Expect an element to have a specific class",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveCount": {
     "prefix": "pw-expect-toHaveCount",
     "body": ["await expect(${1:elementLocator}).toHaveCount($2);"],
-    "description": "Expect an element to have a specific count"
+    "description": "Expect an element to have a specific count",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveCSS": {
     "prefix": "pw-expect-toHaveCSS",
     "body": ["await expect(${1:elementLocator}).toHaveCSS($2, $3);"],
-    "description": "Expect an element to have specific CSS property"
+    "description": "Expect an element to have specific CSS property",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveId": {
     "prefix": "pw-expect-toHaveId",
     "body": ["await expect(${1:elementLocator}).toHaveId($2);"],
-    "description": "Expect an element to have a specific ID"
+    "description": "Expect an element to have a specific ID",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveTitle": {
     "prefix": "pw-expect-toHaveTitle",
     "body": ["await expect(page).toHaveTitle($1);"],
-    "description": "Expect the page to have a specific title"
+    "description": "Expect the page to have a specific title",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveJSProperty": {
     "prefix": "pw-expect-toHaveJSProperty",
     "body": ["await expect(${1:elementLocator}).toHaveJSProperty($2, $3);"],
-    "description": "Expect an element to have a specific JavaScript property"
+    "description": "Expect an element to have a specific JavaScript property",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveRole": {
     "prefix": "pw-expect-toHaveRole",
     "body": ["await expect(${1:elementLocator}).toHaveRole($2);"],
-    "description": "Expect an element to have a specific role"
+    "description": "Expect an element to have a specific role",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveURL": {
     "prefix": "pw-expect-toHaveURL",
     "body": ["await expect(page).toHaveURL($1);"],
-    "description": "Expect the page to have a specific URL"
+    "description": "Expect the page to have a specific URL",
+    "category": "Assertions"
   },
   "Playwright expect().toHaveScreenshot": {
     "prefix": "pw-expect-toHaveScreenshot",
     "body": ["await expect(page).toHaveScreenshot();"],
-    "description": "Expect the page to have a screenshot"
+    "description": "Expect the page to have a screenshot",
+    "category": "Assertions"
   },
   "Playwright network slomo option for a test": {
     "prefix": "pw-test-use-network-slomo",
     "body": ["test.use({ launchOptions: { slowMo: ${1:1_000} } });"],
-    "description": "Slow down Playwright operations"
+    "description": "Slow down Playwright operations",
+    "category": "Options"
   },
   "Playwright testIdAttribute for a test": {
     "prefix": "pw-test-use-testIdAttribute",
     "body": ["test.use({ testIdAttribute : '${1:1_000}'});"],
-    "description": "Set the testIdAttribute for test"
+    "description": "Set the testIdAttribute for test",
+    "category": "Options"
   },
   "Playwright basic network throttling": {
     "prefix": "pw-network-throttle-basic",
@@ -199,7 +232,8 @@
       "\tawait route.continue();",
       "});"
     ],
-    "description": "Throttle network requests globally with a 100ms delay"
+    "description": "Throttle network requests globally with a 100ms delay",
+    "category": "Network"
   },
   "Playwright throttle with random delay": {
     "prefix": "pw-network-throttle-random",
@@ -210,7 +244,8 @@
       "\tawait route.continue();",
       "});"
     ],
-    "description": "Throttle network requests with a random delay"
+    "description": "Throttle network requests with a random delay",
+    "category": "Network"
   },
   "Playwright throttle by request type": {
     "prefix": "pw-network-throttle-request-type",
@@ -222,7 +257,8 @@
       "\tawait route.continue();",
       "});"
     ],
-    "description": "Throttle requests based on HTTP method (GET, POST, etc.)"
+    "description": "Throttle requests based on HTTP method (GET, POST, etc.)",
+    "category": "Network"
   },
   "Playwright throttle CSS and JS": {
     "prefix": "pw-network-throttle-css-js",
@@ -232,7 +268,8 @@
       "\tawait route.continue();",
       "});"
     ],
-    "description": "Throttle loading of CSS and JavaScript resources"
+    "description": "Throttle loading of CSS and JavaScript resources",
+    "category": "Network"
   },
   "Playwright throttle images": {
     "prefix": "pw-network-throttle-images",
@@ -242,14 +279,16 @@
       "\tawait route.continue();",
       "});"
     ],
-    "description": "Throttle loading of image resources"
+    "description": "Throttle loading of image resources",
+    "category": "Network"
   },
   "Playwright set viewport size for a test": {
     "prefix": "pw-test-use-viewport-hd-size",
     "body": [
       "test.use({ viewport: { width: ${1:1920}, height: ${2:1080 } } });"
     ],
-    "description": "Set the viewport size for test"
+    "description": "Set the viewport size for test",
+    "category": "Options"
   },
   "Playwright set locale and timezone for a test": {
     "prefix": "pw-test-use-locale-timezone",
@@ -259,7 +298,8 @@
       "\ttimezoneId: '${2:Europe/Berlin}'",
       "});"
     ],
-    "description": "Set locale and timezone for a specific test"
+    "description": "Set locale and timezone for a specific test",
+    "category": "Options"
   },
   "Playwright set cookie": {
     "prefix": "pw-set-cookie",
@@ -272,12 +312,14 @@
       "}]);",
       "await page.reload();"
     ],
-    "description": "Set a cookie in the browser context"
+    "description": "Set a cookie in the browser context",
+    "category": "Cookies"
   },
   "Playwright clear cookies": {
     "prefix": "pw-clear-cookies",
     "body": ["await context.clearCookies();"],
-    "description": "Clear all cookies in the browser context"
+    "description": "Clear all cookies in the browser context",
+    "category": "Cookies"
   },
   "Playwright handle file download": {
     "prefix": "pw-download",
@@ -288,7 +330,8 @@
       "]);",
       "await download.saveAs('${2:path/to/file}');"
     ],
-    "description": "Handle file downloads"
+    "description": "Handle file downloads",
+    "category": "Downloads"
   },
   "Playwright emulate geolocation": {
     "prefix": "pw-emulate-geolocation",
@@ -299,7 +342,8 @@
       "\tpermissions: ['geolocation'],",
       "});"
     ],
-    "description": "Emulate a specific geolocation"
+    "description": "Emulate a specific geolocation",
+    "category": "Geolocation"
   },
   "Playwright evaluate expression": {
     "prefix": "pw-eval",
@@ -309,7 +353,8 @@
       "});",
       "console.log(result);"
     ],
-    "description": "Evaluate a JavaScript expression in the page context"
+    "description": "Evaluate a JavaScript expression in the page context",
+    "category": "Evaluation"
   },
   "Playwright frame locator with element fill": {
     "prefix": "pw-iframe-fill",
@@ -317,7 +362,8 @@
       "const element = await page.frameLocator('${1:iframeSelector}').getByLabel('${2:labelText}');",
       "await element.fill('${3:inputValue}');"
     ],
-    "description": "Locate and fill an element inside a frame"
+    "description": "Locate and fill an element inside a frame",
+    "category": "Frames"
   },
   "Playwright frame locator with element click": {
     "prefix": "pw-iframe-click",
@@ -325,7 +371,8 @@
       "const element = await page.frameLocator('${1:iframeSelector}').locator('${2:cssSelector}');",
       "await element.click();"
     ],
-    "description": "Locate and click an element inside a frame"
+    "description": "Locate and click an element inside a frame",
+    "category": "Frames"
   },
   "Playwright frame locator with multiple elements": {
     "prefix": "pw-iframe-multiple-elements",
@@ -335,7 +382,8 @@
       "await frame.click('${4:buttonSelector}');",
       "await frame.waitForSelector('${5:nextElementSelector}');"
     ],
-    "description": "Perform multiple interactions inside a frame, including waiting for an element"
+    "description": "Perform multiple interactions inside a frame, including waiting for an element",
+    "category": "Frames"
   },
   "Playwright page add Locator Handler": {
     "prefix": "pw-locator-handler",
@@ -344,7 +392,8 @@
       "\tawait page.getByRole('button', { name: '$2' }).click();",
       "});"
     ],
-    "description": "Add a custom locator handler"
+    "description": "Add a custom locator handler",
+    "category": "Locators"
   },
   "Playwright wait for response": {
     "prefix": "pw-wait-response",
@@ -357,7 +406,8 @@
       "",
       "const response = await responsePromise;"
     ],
-    "description": "Wait for a specific response"
+    "description": "Wait for a specific response",
+    "category": "Network"
   },
   "Playwright beforeEach block": {
     "prefix": "pw-beforeEach",
@@ -367,7 +417,8 @@
       "});",
       ""
     ],
-    "description": "Playwright beforeEach block"
+    "description": "Playwright beforeEach block",
+    "category": "Hooks"
   },
   "Playwright afterEach block": {
     "prefix": "pw-afterEach",
@@ -377,7 +428,8 @@
       "});",
       ""
     ],
-    "description": "Playwright afterEach block"
+    "description": "Playwright afterEach block",
+    "category": "Hooks"
   },
   "Playwright beforeAll block": {
     "prefix": "pw-beforeAll",
@@ -387,7 +439,8 @@
       "});",
       ""
     ],
-    "description": "Playwright beforeAll block"
+    "description": "Playwright beforeAll block",
+    "category": "Hooks"
   },
   "Playwright afterAll block": {
     "prefix": "pw-afterAll",
@@ -397,7 +450,8 @@
       "});",
       ""
     ],
-    "description": "Playwright afterAll block"
+    "description": "Playwright afterAll block",
+    "category": "Hooks"
   },
   "Playwright Page Object": {
     "prefix": "pw-pom",
@@ -422,7 +476,8 @@
       "\t}",
       "}"
     ],
-    "description": "Playwright Page Object Model (POM) class template"
+    "description": "Playwright Page Object Model (POM) class template",
+    "category": "Page Objects"
   },
   "Playwright fixture for Page Object": {
     "prefix": "pw-fixture-pom",
@@ -437,7 +492,8 @@
       "\t}",
       "});"
     ],
-    "description": "Playwright Fixture for Page Object Model (POM) class template"
+    "description": "Playwright Fixture for Page Object Model (POM) class template",
+    "category": "Page Objects"
   },
   "Playwright basic test": {
     "prefix": "pw-test",
@@ -451,7 +507,8 @@
       "\t$4",
       "});"
     ],
-    "description": "Basic test"
+    "description": "Basic test",
+    "category": "Tests"
   },
   "Playwright basic test with annotations": {
     "prefix": "pw-test-annotations",
@@ -469,7 +526,8 @@
       "\t$4",
       "});"
     ],
-    "description": "Basic test with annotations"
+    "description": "Basic test with annotations",
+    "category": "Tests"
   },
   "Playwright basic test step": {
     "prefix": "pw-step",
@@ -483,7 +541,8 @@
       "\t$4",
       "});"
     ],
-    "description": "Basic test step"
+    "description": "Basic test step",
+    "category": "Tests"
   },
   "Playwright basic test describe with before/after hooks": {
     "prefix": "pw-describe",
@@ -506,7 +565,8 @@
       "\t});",
       "});"
     ],
-    "description": "Basic describe suite with before/after hooks"
+    "description": "Basic describe suite with before/after hooks",
+    "category": "Tests"
   },
   "Playwright test describe with all before/after hooks": {
     "prefix": "pw-describe-full",
@@ -537,6 +597,7 @@
       "\t});",
       "});"
     ],
-    "description": "Describe suite with all before/after hooks"
+    "description": "Describe suite with all before/after hooks",
+    "category": "Tests"
   }
 }
