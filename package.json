@@ -5,7 +5,7 @@
   "author": "jaktestowac.pl",
   "publisher": "jaktestowac-pl",
   "homepage": "https://github.com/jaktestowac/vscode-playwright-snippets",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "icon": "imgs/playwright-snippets-logo.png",
   "galleryBanner": {
     "color": "#2b3137",
