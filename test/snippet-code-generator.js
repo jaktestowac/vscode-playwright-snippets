@@ -32,4 +32,4 @@ while (
   formattedCode.pop();
 }
 
-console.log(formattedCode);
+console.log(JSON.stringify(formattedCode, null, 2));

@@ -336,11 +336,11 @@
   "Playwright emulate geolocation": {
     "prefix": "pw-emulate-geolocation",
     "body": [
-      "await context.setGeolocation({",
+      "test.use({ geolocation: {",
       "\tlatitude: ${1:37.7749},",
       "\tlongitude: ${2:-122.4194}",
       "\tpermissions: ['geolocation'],",
-      "});"
+      "}});"
     ],
     "description": "Emulate a specific geolocation",
     "category": "Geolocation"
@@ -354,7 +354,7 @@
       "console.log(result);"
     ],
     "description": "Evaluate a JavaScript expression in the page context",
-    "category": "Evaluation"
+    "category": "Scripts"
   },
   "Playwright frame locator with element fill": {
     "prefix": "pw-iframe-fill",
@@ -400,13 +400,30 @@
     "body": [
       "const responsePromise = page.waitForResponse(response =>",
       "\tresponse.url() === '${1:http://localhost:3000/}'",
-      "\t\t&& response.status() === ${1:200}",
-      "\t\t&& response.request().method() === '${1:GET}'",
+      "\t\t&& response.status() === ${2:200}",
+      "\t\t&& response.request().method() === '${3:GET}'",
       ");",
+      "",
+      "// Your code here",
       "",
       "const response = await responsePromise;"
     ],
     "description": "Wait for a specific response",
+    "category": "Network"
+  },
+  "Playwright wait for request": {
+    "prefix": "pw-wait-request",
+    "body": [
+      "const requestPromise = page.waitForRequest(request =>",
+      "\trequest.url() === '${1:http://localhost:3000/}'",
+      "\t\t&& request.method() === '${2:GET}'",
+      ");",
+      "",
+      "// Your code here",
+      "",
+      "const request = await requestPromise;"
+    ],
+    "description": "Wait for a specific request",
     "category": "Network"
   },
   "Playwright beforeEach block": {
@@ -598,6 +615,44 @@
       "});"
     ],
     "description": "Describe suite with all before/after hooks",
+    "category": "Tests"
+  },
+  "Get elements from the viewport": {
+    "prefix": "pw-get-elements-from-viewport",
+    "body": [
+      "import { test, expect } from '@playwright/test';",
+      "",
+      "const getElementsFromViewport = async (elements: Locator[]): Promise<Locator[]> => {",
+      "\tconst elementsInViewport: Locator[] = [];",
+      "\tfor (const element of elements) {",
+      "\t\tif (await isInViewport(element)) {",
+      "\t\t\telementsInViewport.push(element);",
+      "\t\t}",
+      "\t}",
+      "\treturn elementsInViewport;",
+      "};"
+    ],
+    "description": "Get elements from the viewport",
+    "category": "Utilities"
+  },
+  "Check dataLayer": {
+    "prefix": "pw-check-dataLayer",
+    "body": [
+      "test('check dataLayer', async ({ page }) => {",
+      "\tawait page.goto(",
+      "\t\t'${0:https://stackoverflow.com/questions/75163236/how-to-update-upgrade-playwrigh}'",
+      "\t);",
+      "\tconst dataLayer: [object] = await page.evaluate('dataLayer');",
+      "\tconsole.log(dataLayer);",
+      "",
+      "\tconst searchKey = 'event';",
+      "\tconst dataFound = dataLayer.find((item) => item.hasOwnProperty(searchKey));",
+      "\tconsole.log(",
+      "\t\t`${dataFound?.[searchKey] ?? 'Key ' + searchKey + ' not found in object'}`",
+      "\t);",
+      "});"
+    ],
+    "description": "Check dataLayer",
     "category": "Tests"
   }
 }
