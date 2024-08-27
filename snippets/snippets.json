@@ -338,9 +338,9 @@
     "body": [
       "test.use({ geolocation: {",
       "\tlatitude: ${1:37.7749},",
-      "\tlongitude: ${2:-122.4194}",
+      "\tlongitude: ${2:-122.4194} }",
       "\tpermissions: ['geolocation'],",
-      "}});"
+      "});"
     ],
     "description": "Emulate a specific geolocation",
     "category": "Geolocation"
