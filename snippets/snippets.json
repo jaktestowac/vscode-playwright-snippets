@@ -282,6 +282,28 @@
     "description": "Throttle loading of image resources",
     "category": "Network"
   },
+  "Playwright route abort": {
+    "prefix": "pw-route-abort",
+    "body": [
+      "await page.route('${1:/api/comments}', async (route) => {",
+      "\tawait route.abort();",
+      "});"
+    ],
+    "description": "Abort a network request",
+    "category": "Network"
+  },
+  "Playwright route print console": {
+    "prefix": "pw-route-print-console",
+    "body": [
+      "const response = page.waitForResponse(async (response) => {",
+      "\tconsole.log(response.status(), response.request().method(), response.url());",
+      "\t);",
+      "\treturn true",
+      "});"
+    ],
+    "description": "Print all response details to the console",
+    "category": "Network"
+  },
   "Playwright set viewport size for a test": {
     "prefix": "pw-test-use-viewport-hd-size",
     "body": [
