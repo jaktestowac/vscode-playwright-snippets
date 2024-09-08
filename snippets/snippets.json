@@ -52,8 +52,8 @@
     "description": "Listen for response events",
     "category": "Events"
   },
-  "Playwright page.route": {
-    "prefix": "pw-page-on-request",
+  "Playwright page.route mock API": {
+    "prefix": "pw-page-on-request-mock",
     "body": [
       "await page.route('**/$1', async (route) => {",
       "\tif (route.request()) {",
@@ -676,5 +676,27 @@
     ],
     "description": "Check dataLayer",
     "category": "Tests"
+  },
+  "Record HAR file": {
+    "prefix": "pw-record-har",
+    "body": [
+      "await page.routeFromHAR('./hars/users.har', {",
+      "  url: '*/**/api/users',",
+      "  update: true,",
+      "});"
+    ],
+    "description": "Record HAR file",
+    "category": "Network"
+  },
+  "Use HAR file": {
+    "prefix": "pw-use-har",
+    "body": [
+      "await page.routeFromHAR('./hars/users.har', {",
+      "  url: '*/**/api/users',",
+      "  update: false,",
+      "});"
+    ],
+    "description": "Use HAR file",
+    "category": "Network"
   }
 }
