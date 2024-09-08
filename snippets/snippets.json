@@ -1,7 +1,7 @@
 {
   "Playwright page.goto": {
     "prefix": "pw-goto",
-    "body": "await page.goto('$1');",
+    "body": ["await page.goto('$1');"],
     "description": "Navigate to a URL",
     "category": "Navigation"
   },
