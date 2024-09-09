@@ -698,5 +698,29 @@
     ],
     "description": "Use HAR file",
     "category": "Network"
+  },
+  "Set test describe as serial": {
+    "prefix": "pw-set-describe-serial",
+    "body": ["test.describe.configure({ mode: 'serial' });"],
+    "description": "Set test describe as serial",
+    "category": "Tests"
+  },
+  "Set test describe as parallel": {
+    "prefix": "pw-set-describe-parallel",
+    "body": ["test.describe.configure({ mode: 'parallel' });"],
+    "description": "Set test describe as parallel",
+    "category": "Tests"
+  },
+  "Set test describe as default": {
+    "prefix": "pw-set-describe-default",
+    "body": ["test.describe.configure({ mode: 'default' });"],
+    "description": "Set test describe as default",
+    "category": "Tests"
+  },
+  "Set test describe timeout": {
+    "prefix": "pw-set-describe-timeout",
+    "body": ["test.describe.configure({ timeout: ${1:60000} });"],
+    "description": "Set test describe timeout",
+    "category": "Tests"
   }
 }
