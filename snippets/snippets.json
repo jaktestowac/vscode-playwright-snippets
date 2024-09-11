@@ -3,7 +3,8 @@
     "prefix": "pw-goto",
     "body": ["await page.goto('$1');"],
     "description": "Navigate to a URL",
-    "category": "Navigation"
+    "category": "Navigation",
+    "tags": ["navigation", "goto"]
   },
   "Playwright page.on console": {
     "prefix": "pw-page-on-console",
@@ -13,7 +14,8 @@
       "});"
     ],
     "description": "Listen for console events",
-    "category": "Events"
+    "category": "Events",
+    "tags": ["console", "events", "page.on"]
   },
   "Playwright page.screenshot": {
     "prefix": "pw-page-screenshot",
@@ -21,7 +23,8 @@
       "await page.screenshot({ path: '${0:screenshot.png}', fullPage: true });"
     ],
     "description": "Take a screenshot of the page",
-    "category": "Screenshots"
+    "category": "Screenshots",
+    "tags": ["screenshot", "visual testing"]
   },
   "Playwright locator.screenshot": {
     "prefix": "pw-locator-screenshot",
@@ -29,7 +32,8 @@
       "await ${0:elementLocator}.screenshot({ path: '${1:screenshot.png}' });"
     ],
     "description": "Take a screenshot of the element",
-    "category": "Screenshots"
+    "category": "Screenshots",
+    "tags": ["screenshot", "visual testing"]
   },
   "Playwright runtime annotations": {
     "prefix": "pw-runtime-annotations",
@@ -40,7 +44,8 @@
       "});"
     ],
     "description": "Add runtime annotations",
-    "category": "Annotations"
+    "category": "Annotations",
+    "tags": ["annotations"]
   },
   "Playwright page.on response": {
     "prefix": "pw-page-on-response",
@@ -50,7 +55,8 @@
       "});"
     ],
     "description": "Listen for response events",
-    "category": "Events"
+    "category": "Events",
+    "tags": ["response", "events", "page.on"]
   },
   "Playwright page.route mock API": {
     "prefix": "pw-page-on-request-mock",
@@ -64,7 +70,8 @@
       "})"
     ],
     "description": "Intercept network requests",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["mock", "API", "request", "route"]
   },
   "Playwright expect().toHaveText": {
     "prefix": "pw-expect-toHaveText",
@@ -233,7 +240,8 @@
       "});"
     ],
     "description": "Throttle network requests globally with a 100ms delay",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["throttle", "route"]
   },
   "Playwright throttle with random delay": {
     "prefix": "pw-network-throttle-random",
@@ -245,7 +253,8 @@
       "});"
     ],
     "description": "Throttle network requests with a random delay",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["throttle", "route"]
   },
   "Playwright throttle by request type": {
     "prefix": "pw-network-throttle-request-type",
@@ -258,7 +267,8 @@
       "});"
     ],
     "description": "Throttle requests based on HTTP method (GET, POST, etc.)",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["throttle", "route"]
   },
   "Playwright throttle CSS and JS": {
     "prefix": "pw-network-throttle-css-js",
@@ -269,7 +279,8 @@
       "});"
     ],
     "description": "Throttle loading of CSS and JavaScript resources",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["throttle", "route"]
   },
   "Playwright throttle images": {
     "prefix": "pw-network-throttle-images",
@@ -280,7 +291,8 @@
       "});"
     ],
     "description": "Throttle loading of image resources",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["throttle", "route"]
   },
   "Playwright route abort": {
     "prefix": "pw-route-abort",
@@ -290,19 +302,21 @@
       "});"
     ],
     "description": "Abort a network request",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["route"]
   },
   "Playwright route print console": {
     "prefix": "pw-route-print-console",
     "body": [
       "const response = page.waitForResponse(async (response) => {",
       "\tconsole.log(response.status(), response.request().method(), response.url());",
-      "\t);",
+      "\t",
       "\treturn true",
       "});"
     ],
     "description": "Print all response details to the console",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["waitForResponse"]
   },
   "Playwright set viewport size for a test": {
     "prefix": "pw-test-use-viewport-hd-size",
@@ -353,7 +367,8 @@
       "await download.saveAs('${2:path/to/file}');"
     ],
     "description": "Handle file downloads",
-    "category": "Downloads"
+    "category": "Downloads",
+    "tags": ["waitForEvent"]
   },
   "Playwright emulate geolocation": {
     "prefix": "pw-emulate-geolocation",
@@ -385,7 +400,8 @@
       "await element.fill('${3:inputValue}');"
     ],
     "description": "Locate and fill an element inside a frame",
-    "category": "Frames"
+    "category": "Frames",
+    "tags": ["frameLocator"]
   },
   "Playwright frame locator with element click": {
     "prefix": "pw-iframe-click",
@@ -394,7 +410,8 @@
       "await element.click();"
     ],
     "description": "Locate and click an element inside a frame",
-    "category": "Frames"
+    "category": "Frames",
+    "tags": ["frameLocator"]
   },
   "Playwright frame locator with multiple elements": {
     "prefix": "pw-iframe-multiple-elements",
@@ -405,7 +422,8 @@
       "await frame.waitForSelector('${5:nextElementSelector}');"
     ],
     "description": "Perform multiple interactions inside a frame, including waiting for an element",
-    "category": "Frames"
+    "category": "Frames",
+    "tags": ["iframeSelector"]
   },
   "Playwright page add Locator Handler": {
     "prefix": "pw-locator-handler",
@@ -415,7 +433,8 @@
       "});"
     ],
     "description": "Add a custom locator handler",
-    "category": "Locators"
+    "category": "Locators",
+    "tags": ["addLocatorHandler"]
   },
   "Playwright wait for response": {
     "prefix": "pw-wait-response",
@@ -431,7 +450,8 @@
       "const response = await responsePromise;"
     ],
     "description": "Wait for a specific response",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["request", "waitForResponse"]
   },
   "Playwright wait for request": {
     "prefix": "pw-wait-request",
@@ -446,7 +466,8 @@
       "const request = await requestPromise;"
     ],
     "description": "Wait for a specific request",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["request", "waitForRequest"]
   },
   "Playwright beforeEach block": {
     "prefix": "pw-beforeEach",
@@ -457,7 +478,8 @@
       ""
     ],
     "description": "Playwright beforeEach block",
-    "category": "Hooks"
+    "category": "Hooks",
+    "tags": ["Hooks"]
   },
   "Playwright afterEach block": {
     "prefix": "pw-afterEach",
@@ -468,7 +490,8 @@
       ""
     ],
     "description": "Playwright afterEach block",
-    "category": "Hooks"
+    "category": "Hooks",
+    "tags": ["Hooks"]
   },
   "Playwright beforeAll block": {
     "prefix": "pw-beforeAll",
@@ -479,7 +502,8 @@
       ""
     ],
     "description": "Playwright beforeAll block",
-    "category": "Hooks"
+    "category": "Hooks",
+    "tags": ["Hooks"]
   },
   "Playwright afterAll block": {
     "prefix": "pw-afterAll",
@@ -490,7 +514,8 @@
       ""
     ],
     "description": "Playwright afterAll block",
-    "category": "Hooks"
+    "category": "Hooks",
+    "tags": ["Hooks"]
   },
   "Playwright Page Object": {
     "prefix": "pw-pom",
@@ -516,7 +541,8 @@
       "}"
     ],
     "description": "Playwright Page Object Model (POM) class template",
-    "category": "Page Objects"
+    "category": "Page Objects",
+    "tags": ["POM", "Page Object Model"]
   },
   "Playwright fixture for Page Object": {
     "prefix": "pw-fixture-pom",
@@ -532,7 +558,8 @@
       "});"
     ],
     "description": "Playwright Fixture for Page Object Model (POM) class template",
-    "category": "Page Objects"
+    "category": "Page Objects",
+    "tags": ["POM", "Page Object Model", "Fixture"]
   },
   "Playwright basic test": {
     "prefix": "pw-test",
@@ -605,7 +632,8 @@
       "});"
     ],
     "description": "Basic describe suite with before/after hooks",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["hooks"]
   },
   "Playwright test describe with all before/after hooks": {
     "prefix": "pw-describe-full",
@@ -637,7 +665,8 @@
       "});"
     ],
     "description": "Describe suite with all before/after hooks",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["hooks"]
   },
   "Get elements from the viewport": {
     "prefix": "pw-get-elements-from-viewport",
@@ -675,7 +704,8 @@
       "});"
     ],
     "description": "Check dataLayer",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["evaluate"]
   },
   "Record HAR file": {
     "prefix": "pw-record-har",
@@ -686,7 +716,8 @@
       "});"
     ],
     "description": "Record HAR file",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["routeFromHAR"]
   },
   "Use HAR file": {
     "prefix": "pw-use-har",
@@ -697,30 +728,35 @@
       "});"
     ],
     "description": "Use HAR file",
-    "category": "Network"
+    "category": "Network",
+    "tags": ["routeFromHAR"]
   },
   "Set test describe as serial": {
     "prefix": "pw-set-describe-serial",
     "body": ["test.describe.configure({ mode: 'serial' });"],
     "description": "Set test describe as serial",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["configure"]
   },
   "Set test describe as parallel": {
     "prefix": "pw-set-describe-parallel",
     "body": ["test.describe.configure({ mode: 'parallel' });"],
     "description": "Set test describe as parallel",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["configure"]
   },
   "Set test describe as default": {
     "prefix": "pw-set-describe-default",
     "body": ["test.describe.configure({ mode: 'default' });"],
     "description": "Set test describe as default",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["configure"]
   },
   "Set test describe timeout": {
     "prefix": "pw-set-describe-timeout",
     "body": ["test.describe.configure({ timeout: ${1:60000} });"],
     "description": "Set test describe timeout",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["configure"]
   }
 }
