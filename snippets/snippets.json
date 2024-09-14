@@ -593,7 +593,44 @@
       "});"
     ],
     "description": "Basic test with annotations",
-    "category": "Tests"
+    "category": "Tests",
+    "tags": ["annotations"]
+  },
+  "Playwright basic test with tags": {
+    "prefix": "pw-test-tags",
+    "body": [
+      "test(\"$1\", {",
+      "\ttag: [ '${2:myTagName}' ],",
+      "}, async ({ page }) => {",
+      "\t// Arrange:",
+      "\t$3",
+      "\t// Act:",
+      "\t$4",
+      "\t// Assert:",
+      "\t$5",
+      "});"
+    ],
+    "description": "Basic test with tags",
+    "category": "Tests",
+    "tags": ["annotations", "tag", "tags"]
+  },
+  "Playwright basic test with tag": {
+    "prefix": "pw-test-tag",
+    "body": [
+      "test(\"$1\", {",
+      "\ttag: '${2:myTagName}',",
+      "}, async ({ page }) => {",
+      "\t// Arrange:",
+      "\t$3",
+      "\t// Act:",
+      "\t$4",
+      "\t// Assert:",
+      "\t$5",
+      "});"
+    ],
+    "description": "Basic test with tag",
+    "category": "Tests",
+    "tags": ["annotations", "tag", "tags"]
   },
   "Playwright basic test step": {
     "prefix": "pw-step",

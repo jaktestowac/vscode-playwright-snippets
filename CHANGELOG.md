@@ -2,6 +2,10 @@
 
 All notable changes to the "playwright-snippets" extension will be documented in this file.
 
+## [0.0.24] - 2024-09-14
+
+- feat: tests with tags (annotations)
+
 ## [0.0.23] - 2024-09-11
 
 - feat: tags (for snippets UI extension)
