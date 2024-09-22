@@ -2,6 +2,10 @@
 
 All notable changes to the "playwright-snippets" extension will be documented in this file.
 
+## [1.0.0] - 2024-09-22
+
+- Stable release
+
 ## [0.0.25] - 2024-09-22
 
 - chore: README update
