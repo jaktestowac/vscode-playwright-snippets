@@ -91,7 +91,6 @@ Below you can find a list of all supported snippets.
 | `pw-pom`                                | Playwright Page Object Model (POM) class template                              |
 | `pw-record-har`                         | Record HAR file                                                                |
 | `pw-route-abort`                        | Abort a network request                                                        |
-| `pw-route-print-console`                | Print all response details to the console                                      |
 | `pw-runtime-annotations`                | Add runtime annotations                                                        |
 | `pw-set-cookie`                         | Set a cookie in the browser context                                            |
 | `pw-set-describe-default`               | Set test describe as default                                                   |
@@ -110,6 +109,7 @@ Below you can find a list of all supported snippets.
 | `pw-use-har`                            | Use HAR file                                                                   |
 | `pw-wait-request`                       | Wait for a specific request                                                    |
 | `pw-wait-response`                      | Wait for a specific response                                                   |
+| `pw-wait-response-print-console`        | Print all response details to the console                                      |
 
 # Contributing
 

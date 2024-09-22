@@ -4,7 +4,7 @@
     "body": ["await page.goto('$1');"],
     "description": "Navigate to a URL",
     "category": "Navigation",
-    "tags": ["navigation", "goto"]
+    "tags": ["navigation", "goto", "open"]
   },
   "Playwright page.on console": {
     "prefix": "pw-page-on-console",
@@ -71,7 +71,7 @@
     ],
     "description": "Intercept network requests",
     "category": "Network",
-    "tags": ["mock", "API", "request", "route"]
+    "tags": ["mock", "REST API", "request", "route"]
   },
   "Playwright expect().toHaveText": {
     "prefix": "pw-expect-toHaveText",
@@ -241,7 +241,7 @@
     ],
     "description": "Throttle network requests globally with a 100ms delay",
     "category": "Network",
-    "tags": ["throttle", "route"]
+    "tags": ["throttle", "route", "REST API"]
   },
   "Playwright throttle with random delay": {
     "prefix": "pw-network-throttle-random",
@@ -254,7 +254,7 @@
     ],
     "description": "Throttle network requests with a random delay",
     "category": "Network",
-    "tags": ["throttle", "route"]
+    "tags": ["throttle", "route", "REST API"]
   },
   "Playwright throttle by request type": {
     "prefix": "pw-network-throttle-request-type",
@@ -268,7 +268,7 @@
     ],
     "description": "Throttle requests based on HTTP method (GET, POST, etc.)",
     "category": "Network",
-    "tags": ["throttle", "route"]
+    "tags": ["throttle", "route", "REST API"]
   },
   "Playwright throttle CSS and JS": {
     "prefix": "pw-network-throttle-css-js",
@@ -280,7 +280,7 @@
     ],
     "description": "Throttle loading of CSS and JavaScript resources",
     "category": "Network",
-    "tags": ["throttle", "route"]
+    "tags": ["throttle", "route", "REST API"]
   },
   "Playwright throttle images": {
     "prefix": "pw-network-throttle-images",
@@ -292,7 +292,7 @@
     ],
     "description": "Throttle loading of image resources",
     "category": "Network",
-    "tags": ["throttle", "route"]
+    "tags": ["throttle", "route", "REST API"]
   },
   "Playwright route abort": {
     "prefix": "pw-route-abort",
@@ -303,20 +303,24 @@
     ],
     "description": "Abort a network request",
     "category": "Network",
-    "tags": ["route"]
+    "tags": ["route", "REST API", "network"]
   },
-  "Playwright route print console": {
-    "prefix": "pw-route-print-console",
+  "Playwright waitForResponse print console": {
+    "prefix": "pw-wait-response-print-console",
     "body": [
-      "const response = page.waitForResponse(async (response) => {",
+      "const responsePromise = page.waitForResponse(async (response) => {",
       "\tconsole.log(response.status(), response.request().method(), response.url());",
       "\t",
       "\treturn true",
-      "});"
+      "});",
+      "",
+      "// Your code here",
+      "",
+      "const response = await responsePromise;"
     ],
     "description": "Print all response details to the console",
     "category": "Network",
-    "tags": ["waitForResponse"]
+    "tags": ["waitForResponse", "REST API"]
   },
   "Playwright set viewport size for a test": {
     "prefix": "pw-test-use-viewport-hd-size",
@@ -451,7 +455,7 @@
     ],
     "description": "Wait for a specific response",
     "category": "Network",
-    "tags": ["request", "waitForResponse"]
+    "tags": ["request", "waitForResponse", "REST API"]
   },
   "Playwright wait for request": {
     "prefix": "pw-wait-request",
@@ -467,7 +471,7 @@
     ],
     "description": "Wait for a specific request",
     "category": "Network",
-    "tags": ["request", "waitForRequest"]
+    "tags": ["request", "waitForRequest", "REST API"]
   },
   "Playwright beforeEach block": {
     "prefix": "pw-beforeEach",
