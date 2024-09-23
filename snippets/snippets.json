@@ -799,5 +799,36 @@
     "description": "Set test describe timeout",
     "category": "Tests",
     "tags": ["configure"]
+  },
+  "Run codegen with default browser profile": {
+    "prefix": "pw-codegen-browser-default-profile",
+    "body": [
+      "// 1. Place this code in `codegen.mjs` file",
+      "// 2. Run in terminal: `node codegen.mjs`",
+      "",
+      "import { chromium } from '@playwright/test';",
+      "",
+      "(async () => {",
+      "\t// Setup",
+      "\tconst context = await chromium.launchPersistentContext('C:\\Users\\YourUsername\\AppData\\Local\\Microsoft\\Edge\\User Data', {",
+      "\t\theadless: false,",
+      "\t\tchannel: 'msedge',",
+      "\t\t// args: [`--profile-directory=Profile 2`] // For different profile",
+      "\t\t// For profile name check: chrome://version and 'Profile Path' field",
+      "\t});",
+      "\t// For macOS, use:",
+      "\t// Microsoft Edge: '/Users/YourUsername/Library/Application Support/Microsoft Edge'",
+      "\t// Google Chrome:\t'/Users/YourUsername/Library/Application Support/Google/Chrome'",
+      "",
+      "\tconst page = context.pages()[0];",
+      "",
+      "\tawait page.pause();",
+      "",
+      "\tawait context.close();",
+      "})();"
+    ],
+    "description": "Run codegen with browser profile",
+    "category": "codegen",
+    "tags": ["configure", "codegen", "browser profile"]
   }
 }
