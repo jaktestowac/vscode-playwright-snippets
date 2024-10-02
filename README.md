@@ -42,6 +42,7 @@ Below you can find a list of all supported snippets.
 | `pw-beforeEach`                         | Playwright beforeEach block                                                    |
 | `pw-check-dataLayer`                    | Check dataLayer                                                                |
 | `pw-clear-cookies`                      | Clear all cookies in the browser context                                       |
+| `pw-codegen-browser-default-profile`    | Run codegen with browser profile                                               |
 | `pw-describe`                           | Basic describe suite with before/after hooks                                   |
 | `pw-describe-full`                      | Describe suite with all before/after hooks                                     |
 | `pw-download`                           | Handle file downloads                                                          |
@@ -95,8 +96,12 @@ Below you can find a list of all supported snippets.
 | `pw-set-cookie`                         | Set a cookie in the browser context                                            |
 | `pw-set-describe-default`               | Set test describe as default                                                   |
 | `pw-set-describe-parallel`              | Set test describe as parallel                                                  |
+| `pw-set-describe-retries`               | Set test describe retries                                                      |
 | `pw-set-describe-serial`                | Set test describe as serial                                                    |
 | `pw-set-describe-timeout`               | Set test describe timeout                                                      |
+| `pw-set-test-skip`                      | Set test as skip                                                               |
+| `pw-set-test-slow`                      | Set test as slow                                                               |
+| `pw-set-tests-slow`                     | Set all test as slow                                                           |
 | `pw-step`                               | Basic test step                                                                |
 | `pw-test`                               | Basic test                                                                     |
 | `pw-test-annotations`                   | Basic test with annotations                                                    |

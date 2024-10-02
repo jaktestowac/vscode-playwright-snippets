@@ -758,7 +758,7 @@
     ],
     "description": "Record HAR file",
     "category": "Network",
-    "tags": ["routeFromHAR"]
+    "tags": ["routeFromHAR", "network"]
   },
   "Use HAR file": {
     "prefix": "pw-use-har",
@@ -770,28 +770,35 @@
     ],
     "description": "Use HAR file",
     "category": "Network",
-    "tags": ["routeFromHAR"]
+    "tags": ["routeFromHAR", "network"]
   },
   "Set test describe as serial": {
     "prefix": "pw-set-describe-serial",
     "body": ["test.describe.configure({ mode: 'serial' });"],
     "description": "Set test describe as serial",
     "category": "Tests",
-    "tags": ["configure"]
+    "tags": ["configure", "serial", "mode"]
   },
   "Set test describe as parallel": {
     "prefix": "pw-set-describe-parallel",
     "body": ["test.describe.configure({ mode: 'parallel' });"],
     "description": "Set test describe as parallel",
     "category": "Tests",
-    "tags": ["configure"]
+    "tags": ["configure", "parallel", "mode"]
   },
   "Set test describe as default": {
     "prefix": "pw-set-describe-default",
     "body": ["test.describe.configure({ mode: 'default' });"],
     "description": "Set test describe as default",
     "category": "Tests",
-    "tags": ["configure"]
+    "tags": ["configure", "mode", "mode"]
+  },
+  "Set test describe retries": {
+    "prefix": "pw-set-describe-retries",
+    "body": ["test.describe.configure({ retries: ${1:3} });"],
+    "description": "Set test describe retries",
+    "category": "Tests",
+    "tags": ["configure", "retries"]
   },
   "Set test describe timeout": {
     "prefix": "pw-set-describe-timeout",
@@ -799,6 +806,33 @@
     "description": "Set test describe timeout",
     "category": "Tests",
     "tags": ["configure"]
+  },
+  "Set test as skip": {
+    "prefix": "pw-set-test-skip",
+    "body": [
+      "test.skip(browserName === 'webkit', 'This test is not supported in Safari');"
+    ],
+    "description": "Set test as skip",
+    "category": "Tests",
+    "tags": ["configure", "skip"]
+  },
+  "Set test as slow": {
+    "prefix": "pw-set-test-slow",
+    "body": [
+      "test.slow(browserName === 'webkit', 'This test is slow in Safari');"
+    ],
+    "description": "Set test as slow",
+    "category": "Tests",
+    "tags": ["configure", "slow"]
+  },
+  "Set all tests as slow": {
+    "prefix": "pw-set-tests-slow",
+    "body": [
+      "test.slow(({ browserName }) => browserName === 'webkit', 'all tests are slow in Safari');"
+    ],
+    "description": "Set all test as slow",
+    "category": "Tests",
+    "tags": ["configure", "slow"]
   },
   "Run codegen with default browser profile": {
     "prefix": "pw-codegen-browser-default-profile",

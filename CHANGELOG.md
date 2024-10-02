@@ -2,6 +2,13 @@
 
 All notable changes to the "playwright-snippets" extension will be documented in this file.
 
+## [1.0.1] - 2024-10-02
+
+- feat: code for pw-codegen-browser-default-profile
+- feat: code for set test describe retries
+- feat: code for set test as skip
+- feat: code for set test as slow
+
 ## [1.0.0] - 2024-09-22
 
 - Stable release
