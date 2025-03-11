@@ -2,6 +2,10 @@
 
 All notable changes to the "playwright-snippets" extension will be documented in this file.
 
+## [1.0.2] - 2025-03-11
+
+- feat: getBy snippet
+
 ## [1.0.1] - 2024-10-02
 
 - feat: code for pw-codegen-browser-default-profile

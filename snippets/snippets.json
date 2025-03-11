@@ -779,6 +779,57 @@
     "category": "Tests",
     "tags": ["configure", "serial", "mode"]
   },
+  "locator getByRole": {
+    "prefix": "pw-locator-getByRole",
+    "body": [
+      "await page.getByRole('${1:button}', { name: '${2:buttonName}' });"
+    ],
+    "description": "Get element by role",
+    "category": "Locators",
+    "tags": ["locator", "getBy"]
+  },
+  "locator getByText": {
+    "prefix": "pw-locator-getByText",
+    "body": ["await page.getByText('${1:buttonText}');"],
+    "description": "Get element by text",
+    "category": "Locators",
+    "tags": ["locator", "getBy"]
+  },
+  "locator getByLabel": {
+    "prefix": "pw-locator-getByLabel",
+    "body": ["await page.getByLabel('${1:labelText}');"],
+    "description": "Get element by label text",
+    "category": "Locators",
+    "tags": ["locator", "getBy"]
+  },
+  "locator getByPlaceholder": {
+    "prefix": "pw-locator-getByPlaceholder",
+    "body": ["await page.getByPlaceholder('${1:placeholderText}');"],
+    "description": "Get element by placeholder text",
+    "category": "Locators",
+    "tags": ["locator", "getBy"]
+  },
+  "locator getByAltText": {
+    "prefix": "pw-locator-getByAltText",
+    "body": ["await page.getByAltText('${1:altText}');"],
+    "description": "Get element by alt text",
+    "category": "Locators",
+    "tags": ["locator", "getBy"]
+  },
+  "locator getByTitle": {
+    "prefix": "pw-locator-getByTitle",
+    "body": ["await page.getByTitle('${1:title}');"],
+    "description": "Get element by title",
+    "category": "Locators",
+    "tags": ["locator", "getBy"]
+  },
+  "locator getByTestId": {
+    "prefix": "pw-locator-getByTestId",
+    "body": ["await page.getByTestId('${1:testId}');"],
+    "description": "Get element by test ID",
+    "category": "Locators",
+    "tags": ["locator", "getBy"]
+  },
   "Set test describe as parallel": {
     "prefix": "pw-set-describe-parallel",
     "body": ["test.describe.configure({ mode: 'parallel' });"],
