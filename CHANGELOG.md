@@ -2,6 +2,10 @@
 
 All notable changes to the "playwright-snippets" extension will be documented in this file.
 
+## [1.0.3] - 2025-03-21
+
+- fix: remove unused parameters in beforeAll and afterAll blocks
+
 ## [1.0.2] - 2025-03-11
 
 - feat: getBy snippet

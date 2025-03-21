@@ -500,7 +500,7 @@
   "Playwright beforeAll block": {
     "prefix": "pw-beforeAll",
     "body": [
-      "test.beforeAll(async ({ ${1:page} }) => {",
+      "test.beforeAll(async () => {",
       "\t${0:console.log('beforeAll');}",
       "});",
       ""
@@ -512,7 +512,7 @@
   "Playwright afterAll block": {
     "prefix": "pw-afterAll",
     "body": [
-      "test.afterAll(async ({ ${1:page} }) => {",
+      "test.afterAll(async () => {",
       "\t${0:console.log('afterAll');}",
       "});",
       ""
